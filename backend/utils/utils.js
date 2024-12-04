@@ -12,7 +12,7 @@ const tracksPath = path.join(__dirname, '../artifacts/tracks.csv');
 const csvData = fs.readFileSync(songDataPath, 'utf8');
 // console.log(csvData)
 
-let __dataset = csv.toObjects(csvData);;
+let __dataset = csv.toObjects(csvData);
 
 function cosineSimilarity(vectorA, vectorB) {
     const dotProduct = vectorA.reduce((sum, val, idx) => sum + val * vectorB[idx], 0);
@@ -60,10 +60,14 @@ function recommendSongs(dataset, inputSong, n = 5) {
 }
 
 const trackNames = fs.readFileSync(trackNamesPath, 'utf8').split("\n").splice(1);
+const tracks = fs.readFileSync(tracksPath, 'utf8').split("\n").splice(1);
 
+
+console.log(recommendSongs(__dataset, "a Lights"));
 
 module.exports = {
     recommendSongs,
     trackNames,
-    __dataset
+    __dataset,
+    tracks
 };

@@ -3,20 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/bootstrap.min.css" />
     <title>Document</title>
 </head>
 <body>
-    <h1>Music Recommender App</h1>
-    <form action="/recommendSongs" method="POST">
-        <label for="song">Enter a song name:</label>
-        <input type="text" name="song" id="song" list="trackNames">
-        <datalist id="trackNames">
-            <% for (let track of trackNames) { %>
-                <option value="<%= track %>">
-            <% } %>
-        </datalist>
-        <br>
-        <button type="submit">Recommend</button>
-    </form>
+
+    <div class="album py-5">
+        <div class="container">
+            <div class="card mx-auto w-50 text-center py">
+                <h1>Music Recommender App</h1>
+                <form action="/recommendSongs" method="POST">
+                    <label for="song">Enter a song name:</label>
+                    <input type="text" name="song" id="song" list="trackNames">
+                    <datalist id="trackNames">
+                        <% for (let track of trackNames) { %>
+                            <option value="<%= track %>">
+                        <% } %>
+                    </datalist>
+                    <br>
+                    <button type="submit">Recommend</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
 </body>
 </html>

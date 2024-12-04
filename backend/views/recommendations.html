@@ -6,10 +6,15 @@
     <title>Document</title>
 </head>
 <body>
-    <ol>
-        <% for (let song of recommendedSongs) { %>
-            <li><%= song['track_name'] %> by <%= song['artist_name'] %></li>
-        <% } %>
-    </ol>
+    <% if (typeof recommendedSongs == 'string') { %>
+        <p><%= recommendedSongs %></p>
+    <% } else { %>
+        <h1>Recommended Songs</h1>
+        <ol>
+            <% for (let song of recommendedSongs) { %>
+                <li><%= song['track_name'] %> by <%= song['artist_name'] %></li>
+            <% } %>
+        </ol>
+    <% } %>
 </body>
 </html>
