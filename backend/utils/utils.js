@@ -6,6 +6,7 @@ const fs = require('fs');
 
 const songDataPath = path.join(__dirname, '../artifacts/song_data.csv');
 const trackNamesPath = path.join(__dirname, '../artifacts/track_names.csv');
+const tracksPath = path.join(__dirname, '../artifacts/tracks.csv');
 
 
 const csvData = fs.readFileSync(songDataPath, 'utf8');
@@ -49,7 +50,7 @@ function recommendSongs(dataset, inputSong, n = 5) {
         };
     });
 
-    // Sort by similarity and exclude the input song itself
+    // Sort by similarity and exclude the input song itselfS
     const recommendations = similarities
         .filter(row => row.track_name.toLowerCase() !== inputSong.toLowerCase())
         .sort((a, b) => b.similarity - a.similarity)
