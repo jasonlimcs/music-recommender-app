@@ -4,11 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/bootstrap.min.css" />
+    <link rel="stylesheet" href="/css/style.css">
     <title>Document</title>
 </head>
 <body>
 
-    <div class="album py-5">
+    <!-- <div class="album py-5">
         <div class="container">
             <div class="card mx-auto w-50 text-center my-5 py-5">
                 <h1 class="py-3">Music Recommender App</h1>
@@ -25,7 +26,56 @@
                 </form>
             </div>
         </div>
-    </div>
+    </div> -->
+
+        
+        <!-- <div class="input-box">
+            <form action="/recommendSongs" method="POST">
+                <h1 class="py-3">Music Recommender App</h1>
+                <div class="user-box">
+                    <input type="text" name="song" id="song" list="trackNames">
+                    <datalist id="trackNames">
+                        <% for (let track of trackNames) { %>
+                            <option value="<%= track %>">
+                        <% } %>
+                    </datalist>
+                    <label for="song">Enter a song name:</label>
+                    
+                </div>
+                <div class="user-box">
+                    <input type="number" name="quantity" min="1" max="20">
+                    <label for="quantity">No of songs to be recommended:</label>
+                    
+                </div><center>
+                    <button type="submit">Recommend<span></span></button>
+                </center>
+            
+            </form>
+        </div> -->
+
+
+        <div class="input-box">
+ 
+            <form action="/recommendSongs" method="POST">
+                <h1 class="py-4 text-light">Music Recommender</h1>
+                <div class="user-box">
+                    <input type="text" name="song" required="" list="trackNames">
+                    <datalist id="trackNames">
+                        <% for (let track of trackNames) { %>
+                            <option value="<%= track %>">
+                        <% } %>
+                    </datalist>
+                    <label>Enter a song name:</label>
+                </div>
+                <div class="user-box">
+                    <input type="number" name="quantity" required="" placeholder="5">
+                    <label>No of songs to be recommended:</label>
+                </div>
+                <center>
+                    <button type="submit">Recommend<span></span></button>
+                </center>
+            </form>
+          </div>
 
 </body>
 </html>

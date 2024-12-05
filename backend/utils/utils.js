@@ -21,7 +21,7 @@ function cosineSimilarity(vectorA, vectorB) {
     return dotProduct / (magnitudeA * magnitudeB);
 }
 
-function recommendSongs(dataset, inputSong, n = 5) {
+function recommendSongs(dataset, inputSong, n = 10) {
     if (!dataset || dataset.length === 0) {
         alert("Dataset is empty! Please process a CSV file first.");
         return;
@@ -63,7 +63,6 @@ const trackNames = fs.readFileSync(trackNamesPath, 'utf8').split("\n").splice(1)
 const tracks = fs.readFileSync(tracksPath, 'utf8').split("\n").splice(1);
 
 
-console.log(recommendSongs(__dataset, "a Lights"));
 
 module.exports = {
     recommendSongs,
